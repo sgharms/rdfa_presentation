@@ -1,0 +1,282 @@
+!SLIDE cover
+!TITLE RDFa!
+
+h1. RDFa
+
+h2.  Steven G. Harms
+
+h2.  (stharms@cisco.com)
+
+!SLIDE
+
+h1=.  What is this?
+
+h1=.  (415)555-4321
+
+!SLIDE
+
+h1=.  How About this One?
+
+h1=.  444-33-2222
+
+!SLIDE
+
+h2=. How Did You Know This?
+
+!SLIDE
+
+h2=.  Semantics
+
+!SLIDE
+
+h1=. What does this (415)555-4321 mean on the Web to a Crawler?
+
+!SLIDE
+
+h1=.  Nothing
+
+!SLIDE
+
+h1.  What are "The Bears" on the Web?
+
+!SLIDE
+
+# A baseball team in Chicago?
+# Pessimistic investors on Wall Street?
+# _Ursidae_?
+
+!SLIDE
+
+h1.  Taxonomies (Directories)
+
+!SLIDE
+
+!img/yahoo.png!
+
+!SLIDE
+
+h1.  Humans suck
+
+# Don't curate the data
+# Don't want to build out the directory
+
+!SLIDE
+
+h1.  Aggregate the tokens and privilege the most influential use of the tokens
+
+!SLIDE
+
+!img/google.png!
+
+!SLIDE
+
+h1=.  How can we do this without making someone really rich?
+
+!SLIDE
+
+!img/tbl.jpg!
+
+_Tim Berners-Lee_
+
+!SLIDE
+
+h1=.  Build a world of triples <br/> ("3-tuples")
+
+|_. Subject |_. Predicate |_. Object |
+| Steven | HasNumber | 415-222-3333 |
+| Steven | AnimalType | Human |
+| Steven | EmployedBy | Cisco Inc. |
+
+!SLIDE
+
+h1=.  SemanticWebWorld
+
+h2.  Resource Description Framework (RDF) statement databases talking to each other in a giant graph
+
+!SLIDE
+
+h1=.  The Greatest JOIN Statement Ever Against The Graph (SPARQL)
+
+!SLIDE
+
+# "Steven's girlfriend's favorite movie's director's first film"
+
+
+!SLIDE
+
+h1.  Network Effect of Triples
+
+!SLIDE
+
+h1. What if...
+
+!SLIDE
+
+h2.  Some corporate data were expressed in RDF stores?
+
+!SLIDE
+
+h1.  Drawbacks
+
+* Cost
+* Nerdy
+
+!SLIDE
+_The Suits would never go for it_
+
+!SLIDE
+
+h1.  Stealthy
+
+!img/b2.jpg!
+
+
+!SLIDE
+
+h1.  What if we could extend familiar metaphors, embed the RDF payload into HTML?
+
+
+!SLIDE
+
+h1.  _Only the machines and nerds need know..._
+
+!SLIDE
+
+RDF + in attributes = RDFa
+
+!SLIDE
+
+h1=.  Looks like HTML...
+
+<pre>
+<div about="http://example.com/bob/photos/sunset.jpg">
+  <img src="http://example.com/bob/photos/sunset.jpg" />
+  <span property="dc:title">Beautiful Sunset</span>
+  by <span property="dc:creator">Bob</span>.
+</div>
+</pre>
+
+!SLIDE
+
+h1=.  But _distills_ to RDF
+
+|http://example.com/bob/photos/sunset.jpg|dc:title|"Beautiful Sunset"|
+|http://example.com/bob/photos/sunset.jpg|dc:creator|"Bob"|
+
+!SLIDE
+
+h1=.  GEE WHIZ!  It was RDFa!  
+
+!img/5_3_I.jpg!
+
+!SLIDE
+
+h1.  Uniqueness
+
+!SLIDE
+
+h2.  Namespaces:  
+
+_dc: == Huh?_
+
+!SLIDE
+
+h2.  URI's:  
+
+_Why is everything a URI?_
+
+!SLIDE
+
+Keywords are defined in namespaces.  Thus the dc: is for Dublin Core, they define a 'title' and an 'creator'; thus, dc:creator, dc:title
+
+!SLIDE
+
+h1.  Another Popular Namespace
+
+foaf: is for Friend of a Friend, very common
+
+!SLIDE
+
+<pre style="font-size:10pt">
+	<?xml version="1.0" encoding="utf-8"?>
+	<rdf:RDF
+	  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	  xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
+	  xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	>
+	  <foaf:Person>
+	    <foaf:homepage rdf:resource="http://example.com/bob/"/>
+	    <foaf:name>Bob</foaf:name>
+	  </foaf:Person>
+	  <foaf:Person>
+	    <foaf:homepage rdf:resource="http://example.com/eve/"/>
+	    <foaf:name>Eve</foaf:name>
+	  </foaf:Person>
+	  <foaf:Person>
+	    <foaf:homepage rdf:resource="http://example.com/manu/"/>
+	    <foaf:name>Manu</foaf:name>
+	  </foaf:Person>
+	</rdf:RDF>
+</pre>
+
+!SLIDE
+
+h1=.  Why should I use RDFa?
+
+# Search Engine Preview
+# SEO?
+# It's easy, you're just extending XHTML a bit...
+# Scalability
+# FB, GOOG are behind it...
+
+!SLIDE
+
+h1.  Exploring RDFa in the Wild:  W3C Primer
+
+"http://www.w3.org/TR/xhtml-rdfa-primer/#id85076":http://www.w3.org/TR/xhtml-rdfa-primer/#id85076
+
+!SLIDE
+
+h1=.  Exploring RDFa in the Wild:  O'Reilly
+
+"http://oreilly.com/catalog/9780596100674/":http://oreilly.com/catalog/9780596100674/
+
+!SLIDE
+
+h1=.  Exploring RDFa in the Wild:  Steven
+
+"http://stevengharms.com/resume.html":http://stevengharms.com/resume.html
+
+!SLIDE
+
+h1.  QUAD
+
+!SLIDE
+
+h1=.  Tools
+
+!SLIDE
+
+h1.  Distiller turns XHTML+RDFa into RDF
+
+"http://www.w3.org/2007/08/pyRdfa/":http://www.w3.org/2007/08/pyRdfa/
+
+!SLIDE
+
+h1.  Validator validates and makes sweet graphs
+
+"http://www.w3.org/RDF/Validator/":http://www.w3.org/RDF/Validator/
+
+!SLIDE
+
+h1=.  RDFa Primer
+
+"http://www.w3.org/TR/xhtml-rdfa-primer/":http://www.w3.org/TR/xhtml-rdfa-primer/
+
+!SLIDE
+
+h1=.  _Fin_
+
+
