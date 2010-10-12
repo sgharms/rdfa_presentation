@@ -101,7 +101,6 @@ h1=.  The Greatest JOIN Statement Ever Against The Graph (SPARQL)
 
 # "Steven's girlfriend's favorite movie's director's first film"
 
-
 !SLIDE
 
 h1.  Network Effect of Triples
